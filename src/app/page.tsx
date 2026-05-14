@@ -15,7 +15,7 @@ const page = () => {
     <div id='new-chat' className='h-full'>
 
       {/* Header */}
-      <header className='flex items-center h-20 px-5 border-b justify-between'>
+      <header className='flex items-center h-18 px-5 border-b justify-between'>
         <h2 className='text-2xl'>
           New Chat
         </h2>

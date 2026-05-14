@@ -1,6 +1,8 @@
 "use client"
 
+import ThemeToggle from '@/components/ThemeToggle';
 import React, { ChangeEvent, useState } from 'react'
+import { SendHorizontalIcon } from 'lucide-react';
 
 const page = () => {
 
@@ -19,9 +21,10 @@ const page = () => {
         </h2>
 
         <span>
-          <button className='btn-primary text-sm px-3 py-2 cursor-pointer active:scale-95'>
+          {/* <button className='btn-primary text-sm px-3 py-2 cursor-pointer active:scale-95'>
             Get Plus
-          </button>
+          </button> */}
+          <ThemeToggle className='btn-primary text-sm px-3 py-2 cursor-pointer active:scale-95' />
         </span>
       </header>
 
@@ -32,8 +35,10 @@ const page = () => {
           What are you working on?
         </div>
         <div className='flex w-full justify-center items-center h-fit'>
-          <input onChange={handleOnChange} type="text" placeholder='Ask Anything' className='h-18 w-2/3 px-5 pr-23 py-1 bg-accent rounded-2xl outline-0' value={prompt} />
-          <button className='relative -left-19 h-fit bg-foreground text-background rounded px-3 py-2 active:scale-95 cursor-pointer'>Send</button>
+          <input onChange={handleOnChange} type="text" placeholder='Ask Anything' className='h-18 w-1/2 px-5 pr-23 py-1 bg-accent rounded-4xl outline-0' value={prompt} />
+          <button className='relative -left-16 h-fit bg-foreground text-background px-3 py-3 active:scale-95 cursor-pointer rounded-full'>
+            <SendHorizontalIcon />
+          </button>
         </div>
       </div>
 

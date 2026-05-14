@@ -128,11 +128,11 @@ const Sidebar = () => {
                 <span>Chat Clone</span>
                 <span className='relative top-4 mx-0 flex-1 border h-0 w-0'></span>
             </div>
-            <div id='actions' className='flex px-3 py-4 flex-col gap-2 mb-5'>
+            <div id='actions' className='flex px-3 py-2 flex-col gap-2 mb-0'>
                 {
                     actions.map((action) => {
                         return (
-                            <button key={action.id} className='w-full px-3 py-2 text-left btn-primary-foreground btn-primary cursor-pointer active:scale-95' onClick={action.func}>
+                            <button key={action.id} className='w-full px-3 py-2 text-left hover:bg-primary hover:text-primary-foreground transition-transform durations-100 rounded-2xl cursor-pointer active:scale-95 text-bold' onClick={action.func}>
                                 {action.actionName}
                             </button>)
                     })
@@ -151,7 +151,7 @@ const Sidebar = () => {
                     {
                         chatHistory.map((chat) => {
                             return (
-                                <button className='px-3 py-2 w-55 btn-secondary overflow-hidden cursor-pointer text-left active:scale-95 truncate'>
+                                <button className='px-3 py-2 w-55 hover:bg-secondary transition-transform duration-100 rounded-sm overflow-hidden cursor-pointer text-left active:scale-95 truncate'>
                                     {chat.title}
                                 </button>
                             )
@@ -161,9 +161,9 @@ const Sidebar = () => {
             </div>
 
             {/* Toggle Theme Button */}
-            <div id='theme-toggle' className='flex relative bottom-0 px-5 py-4 w-full border justify-end'>
+            {/* <div id='theme-toggle' className='flex relative bottom-0 px-5 py-4 w-full border justify-end'>
                 <ThemeToggle className='flex gap-2 px-3 py-2 btn-primary text-primary-foreground active:scale-95 cursor-pointer justify-center' />
-            </div>
+            </div> */}
 
             {/* User Profile */}
             <div id='user-profile' className='relative flex bottom-0 px-5 py-4 w-full border text-center gap-2'>

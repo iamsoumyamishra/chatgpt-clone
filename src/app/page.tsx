@@ -29,7 +29,7 @@ const page = () => {
 
       <div className='flex flex-col gap-30 h-full justify-center items-center'>
         <div id='filler' className='text-3xl'>
-          What are you woring on?
+          What are you working on?
         </div>
         <div className='flex w-full justify-center items-center h-10'>
         <input onChange={handleOnChange} type="text" placeholder='Ask Anything' className='h-18 w-2/3 px-5 pr-23 py-1 bg-accent rounded-2xl outline-0' value={prompt}/>

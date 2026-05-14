@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useEffect, useState } from 'react'
+import { MoonIcon, Sun, SunIcon } from 'lucide-react'
 
 const ThemeToggle = ({ className }: { className: string }) => {
 
@@ -22,7 +23,7 @@ const ThemeToggle = ({ className }: { className: string }) => {
             <button id='toggle-theme' onClick={() => {
                 setTheme(theme == "dark" ? "light": "dark");
             }} className={className}>
-                Toggle {theme == "dark" ? "Light": "Dark"}
+                Toggle {theme == "dark" ? <MoonIcon />: <Sun />}
             </button>
     )
 }

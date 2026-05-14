@@ -159,8 +159,8 @@ const Sidebar = () => {
             </div>
 
             {/* Toggle Theme Button */}
-            <div id='theme-toggle' className='relative bottom-0 px-5 py-4 w-full border text-center'>
-                <ThemeToggle className='px-3 py-2 btn-primary text-primary-foreground active:scale-95 cursor-pointer w-50' />
+            <div id='theme-toggle' className='flex relative bottom-0 px-5 py-4 w-full border justify-center'>
+                <ThemeToggle className='flex gap-2 px-3 py-2 btn-primary text-primary-foreground active:scale-95 cursor-pointer w-40 justify-center' />
             </div>
 
             {/* User Profile */}

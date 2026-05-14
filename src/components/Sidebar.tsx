@@ -140,16 +140,18 @@ const Sidebar = () => {
             </div>
 
             {/* Chat History */}
-            <div id='chat-history' className='flex flex-col overflow-x-auto h-full px-3 pb-4 mt-4 w-full'>
+            <div id='chat-history' className='flex flex-col overflow-x-auto h-full px-3 pb-4 mt-4 w-full' style={{
+                boxShadow: "inset 0px -12px 12px -12px rgba(0, 0, 0, 0.1)"
+            }}>
                 <div id='chat-history-head' className='sticky top-0 flex px-3 pb-2 items-center bg-card'>
                     <span>Chat history</span>
                     <span className='relative top-0 mx-2 flex-1 border h-0 w-0'></span>
                 </div>
-                <div id='history' className='flex flex-col justify-center w-fit gap-2 pt-2'>
+                <div id='history' className='flex flex-col justify-center w-fit gap-3 pt-2 text-sm'>
                     {
                         chatHistory.map((chat) => {
                             return (
-                                <button className='px-3 py-2 w-55 btn-secondary gap-2 overflow-hidden cursor-pointer text-left active:scale-95 truncate'>
+                                <button className='px-3 py-2 w-55 btn-secondary overflow-hidden cursor-pointer text-left active:scale-95 truncate'>
                                     {chat.title}
                                 </button>
                             )
@@ -159,8 +161,8 @@ const Sidebar = () => {
             </div>
 
             {/* Toggle Theme Button */}
-            <div id='theme-toggle' className='flex relative bottom-0 px-5 py-4 w-full border justify-center'>
-                <ThemeToggle className='flex gap-2 px-3 py-2 btn-primary text-primary-foreground active:scale-95 cursor-pointer w-40 justify-center' />
+            <div id='theme-toggle' className='flex relative bottom-0 px-5 py-4 w-full border justify-end'>
+                <ThemeToggle className='flex gap-2 px-3 py-2 btn-primary text-primary-foreground active:scale-95 cursor-pointer justify-center' />
             </div>
 
             {/* User Profile */}

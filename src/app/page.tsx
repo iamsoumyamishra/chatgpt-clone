@@ -30,8 +30,8 @@ const page = () => {
 
       {/* Chat View */}
 
-      <div className='flex flex-col h-full items-center gap-20'>
-        <div id='filler' className='flex w-full justify-center items-end text-3xl h-70'>
+      <div className='flex flex-col h-full items-center gap-15'>
+        <div id='filler' className='flex w-full justify-center items-end text-3xl h-80'>
           What are you working on?
         </div>
         <div className='flex w-full justify-center items-center h-fit'>

@@ -1,6 +1,6 @@
 import React from 'react'
-import ThemeToggle from './ThemeToggle'
-import Link from 'next/link'
+import { MessageCirclePlusIcon, SearchIcon } from 'lucide-react'
+import Image from 'next/image'
 
 const Sidebar = () => {
 
@@ -8,12 +8,14 @@ const Sidebar = () => {
         {
             id: 1,
             actionName: "New Chat",
-            func: undefined
+            func: undefined,
+            icon: <MessageCirclePlusIcon height={20} width={20} />
         },
         {
             id: 2,
             actionName: "Search Chat",
-            func: undefined
+            func: undefined,
+            icon: <SearchIcon height={20} width={20} />
         }
     ]
 
@@ -125,15 +127,21 @@ const Sidebar = () => {
 
             {/* Head of the Sidebar */}
             <div id='head' className='flex gap-2 justify-between text-2xl px-4 py-6'>
-                <span>Chat Clone</span>
-                <span className='relative top-4 mx-0 flex-1 border h-0 w-0'></span>
+                <span className='flex gap-6'>
+                    <Image src={'/logo.png'} height={30} width={30} alt='logo' />
+                    Chat Clone
+                </span>
+                {/* <span className='relative top-4 mx-0 flex-1 border h-0 w-0'></span> */}
             </div>
             <div id='actions' className='flex px-3 py-2 flex-col gap-2 mb-0'>
                 {
                     actions.map((action) => {
                         return (
-                            <button key={action.id} className='w-full px-3 py-2 text-left hover:bg-primary hover:text-primary-foreground transition-transform durations-100 rounded-2xl cursor-pointer active:scale-95 text-bold' onClick={action.func}>
-                                {action.actionName}
+                            <button key={action.id} className='flex items-center gap-3 w-full px-3 py-2 text-left hover:bg-primary hover:text-primary-foreground transition-transform durations-100 rounded-2xl cursor-pointer active:scale-95 text-bold' onClick={action.func}>
+                                {action.icon}
+                                <span>
+                                    {action.actionName}
+                                </span>
                             </button>)
                     })
                 }

@@ -159,7 +159,7 @@ const Sidebar = () => {
                     {
                         chatHistory.map((chat) => {
                             return (
-                                <button className='px-3 py-2 w-55 hover:bg-secondary transition-transform duration-100 rounded-sm overflow-hidden cursor-pointer text-left active:scale-95 truncate'>
+                                <button key={chat.id} className='px-3 py-2 w-55 hover:bg-secondary transition-transform duration-100 rounded-sm overflow-hidden cursor-pointer text-left active:scale-95 truncate'>
                                     {chat.title}
                                 </button>
                             )

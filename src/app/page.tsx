@@ -34,7 +34,7 @@ const page = () => {
         <div id='filler' className='flex w-full justify-center items-end text-3xl h-80'>
           What are you working on?
         </div>
-        <div className='flex w-fit justify-center items-center h-fit bg-accent text-accent-foreground'>
+        <div className='flex w-full justify-center items-center h-fit'>
           <input onChange={handleOnChange} type="text" placeholder='Ask Anything' className='h-16 w-1/2 pl-10 pr-23 py-1 bg-accent rounded-3xl outline-0' value={prompt} />
           <button className='relative -left-16 h-fit bg-foreground text-background px-3 py-3 active:scale-95 cursor-pointer rounded-full'>
             <SendHorizontalIcon />

@@ -9,7 +9,7 @@ const jetBrains_Mono = JetBrains_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "ChatGPT Clone",
+  title: process.env.NEXT_PUBLIC_APP_NAME,
   description: "This is a clone for ChatGPT",
 };
 

@@ -129,7 +129,7 @@ const Sidebar = () => {
             <div id='head' className='flex gap-2 justify-between text-2xl px-4 py-6'>
                 <span className='flex gap-6'>
                     <Image src={'/logo.png'} height={30} width={30} alt='logo' />
-                    Chat Clone
+                    {process.env.NEXT_PUBLIC_APP_NAME || "Chat GPT"}
                 </span>
                 {/* <span className='relative top-4 mx-0 flex-1 border h-0 w-0'></span> */}
             </div>

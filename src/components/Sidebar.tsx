@@ -123,7 +123,7 @@ const Sidebar = () => {
     ];
 
     return (
-        <aside className='flex flex-col h-screen bg-card w-65 border border-border relative'>
+        <aside className='flex flex-col h-screen bg-card w-7- border border-border relative'>
 
             {/* Head of the Sidebar */}
             <div id='head' className='flex gap-2 justify-between text-2xl px-4 py-6'>
@@ -131,8 +131,9 @@ const Sidebar = () => {
                     <Image src={'/logo.png'} height={30} width={30} alt='logo' />
                     {process.env.NEXT_PUBLIC_APP_NAME || "Chat GPT"}
                 </span>
-                {/* <span className='relative top-4 mx-0 flex-1 border h-0 w-0'></span> */}
             </div>
+
+            {/* Actions (e.g. New Chat / Search) */}
             <div id='actions' className='flex px-3 py-2 flex-col gap-2 mb-0'>
                 {
                     actions.map((action) => {
@@ -155,11 +156,11 @@ const Sidebar = () => {
                     <span>Chat history</span>
                     <span className='relative top-0 mx-2 flex-1 border h-0 w-0'></span>
                 </div>
-                <div id='history' className='flex flex-col justify-center w-fit gap-3 pt-2 text-sm'>
+                <div id='history' className='flex flex-col justify-center w-fit gap-0 pt-2 text-sm'>
                     {
                         chatHistory.map((chat) => {
                             return (
-                                <button key={chat.id} className='px-3 py-2 w-55 hover:bg-secondary transition-transform duration-100 rounded-sm overflow-hidden cursor-pointer text-left active:scale-95 truncate'>
+                                <button key={chat.id} className='px-3 py-2 w-70 hover:bg-secondary transition-transform duration-100 rounded-sm overflow-hidden cursor-pointer text-left active:scale-95 truncate'>
                                     {chat.title}
                                 </button>
                             )

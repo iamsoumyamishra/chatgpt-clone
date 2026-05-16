@@ -1,21 +1,35 @@
-import React from 'react'
-import { MessageCirclePlusIcon, SearchIcon } from 'lucide-react'
+'use client'
+
+import { LucideIcon, MessageCirclePlusIcon, SearchIcon } from 'lucide-react'
 import Image from 'next/image'
+import { useRouter } from 'next/navigation'
+
+
+interface Action {
+  id: number
+  actionName: string
+  func?: () => void
+  icon: LucideIcon
+}
 
 const Sidebar = () => {
+
+    const router = useRouter()
 
     const actions = [
         {
             id: 1,
             actionName: "New Chat",
-            func: undefined,
-            icon: <MessageCirclePlusIcon height={20} width={20} />
+            func: () => {
+                router.push("/")
+            },
+            icon: MessageCirclePlusIcon
         },
         {
             id: 2,
             actionName: "Search Chat",
             func: undefined,
-            icon: <SearchIcon height={20} width={20} />
+            icon: SearchIcon
         }
     ]
 
@@ -138,8 +152,8 @@ const Sidebar = () => {
                 {
                     actions.map((action) => {
                         return (
-                            <button key={action.id} className='flex items-center gap-3 w-full px-3 py-2 text-left hover:bg-primary hover:text-primary-foreground transition-transform durations-100 rounded-2xl cursor-pointer active:scale-95 text-bold' onClick={action.func}>
-                                {action.icon}
+                            <button key={action.id} className='flex items-center gap-3 w-full px-3 py-2 text-left hover:bg-primary hover:text-primary-foreground transition-transform durations-100 rounded-2xl cursor-pointer active:scale-95 text-bold' onClick={action.func ?? undefined}>
+                                {<action.icon height={20} width={20}/>}
                                 <span>
                                     {action.actionName}
                                 </span>
@@ -160,7 +174,9 @@ const Sidebar = () => {
                     {
                         chatHistory.map((chat) => {
                             return (
-                                <button key={chat.id} className='px-3 py-2 w-70 hover:bg-secondary transition-transform duration-100 rounded-sm overflow-hidden cursor-pointer text-left active:scale-95 truncate'>
+                                <button onClick={() => {
+                                    router.push(`/c/${chat.id}`)
+                                }} key={chat.id} className='px-3 py-2 w-70 hover:bg-secondary transition-transform duration-100 rounded-sm overflow-hidden cursor-pointer text-left active:scale-95 truncate'>
                                     {chat.title}
                                 </button>
                             )

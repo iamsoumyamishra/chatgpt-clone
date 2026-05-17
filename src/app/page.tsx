@@ -3,6 +3,7 @@
 import ThemeToggle from '@/components/ThemeToggle';
 import { useEffect, useState, useRef } from 'react'
 import { SendHorizontalIcon } from 'lucide-react';
+import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import { PlusIcon } from 'lucide-react';
 
@@ -11,9 +12,24 @@ const page = () => {
   const [prompt, setPrompt] = useState<string>("");
   const promptInput = useRef<HTMLTextAreaElement | null>(null);
   const time = new Date().getHours();
+  const router = useRouter()
 
   const handleOnChange = (event: any) => {
     setPrompt(event.target.value);
+  }
+
+  const handleSubmit = () => {
+    let id = 1;
+    router.push(`/c/${id}`);
+  }
+
+  const handleKeyDown = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      handleSubmit();
+    }
+
   }
 
   useEffect(() => {
@@ -57,17 +73,18 @@ const page = () => {
           </div>
         </div>
         <div className='flex flex-col gap-5 px-2 rounded-2xl py-4 h-fit w-1/2 bg-accent text-accent-foreground'>
-          <textarea ref={promptInput} id='prompt' onChange={handleOnChange} placeholder='How can I help you today?' className='w-full max-h-80 outline-0 resize-none px-3 py-2' value={prompt} />
+          <textarea ref={promptInput} id='prompt' onKeyDown={handleKeyDown} onChange={handleOnChange} placeholder='How can I help you today?' className='w-full max-h-80 outline-0 resize-none px-3 py-2' value={prompt} />
           <div id='actions' className='flex justify-between w-full'>
             <button className='text-muted-foreground px-3 py-3 active:scale-95 cursor-pointer rounded-full hover:bg-muted'>
               <PlusIcon />
             </button>
-            <button className='bg-foreground text-background px-3 py-3 active:scale-95 cursor-pointer rounded-full'>
+            <button onClick={handleSubmit} className='bg-foreground text-background px-3 py-3 active:scale-95 cursor-pointer rounded-full'>
               <SendHorizontalIcon />
             </button>
           </div>
         </div>
       </div>
+
 
     </div>
   )

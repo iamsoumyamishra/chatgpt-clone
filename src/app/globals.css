@@ -194,6 +194,55 @@
   *::-webkit-scrollbar-thumb:hover {
     background: var(--muted-foreground);
   }
+
+  .prose pre {
+    border-radius: 16px;
+    padding: 16px;
+    overflow-x: auto;
+  }
+
+  .prose code {
+    font-size: 0.9rem;
+  }
+
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow: hidden;
+    border-radius: 12px;
+  }
+
+  .prose thead {
+    background: rgb(39 39 42);
+  }
+
+  .prose th,
+  .prose td {
+    border: 1px solid rgb(63 63 70);
+    padding: 12px;
+  }
+
+  .prose tr:nth-child(even) {
+    background: rgba(255,255,255,0.03);
+  }
+
+  .prose blockquote {
+    border-left: 4px solid rgb(63 63 70);
+    padding-left: 1rem;
+    color: rgb(161 161 170);
+  }
+
+  .prose h1,
+  .prose h2,
+  .prose h3 {
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  .prose p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
 }
 
 }
